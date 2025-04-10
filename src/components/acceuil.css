@@ -1,0 +1,313 @@
+/* Palette de couleurs */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+    --yellow: #ffe066;
+    --orange: #ff8c42;
+    --pink: #ff5c8a;
+    --purple: #a97aff;
+    --blue: #6abfff;
+    --background: #f9f9f9;
+    --text-light: #333333;
+    --text-dark: #1e1e2f;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--pink) ;
+    background-size: cover;
+    background-position: center;
+    color: var(--text-dark);
+    }
+  
+  #root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  h1 {
+    font-size:60px;
+    margin-bottom: 1rem;
+    color: rgb(255, 255, 255);
+  }
+  
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+  
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+  
+  /* Bouton de configuration */
+  .settings-button {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    background-color: var(--yellow);
+    color: var(--text-dark);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px ;
+   
+  }
+  
+  .settings-button:hover {
+    background-color: var(--orange);
+  }
+  
+  .sidebar-open .settings-button {
+    display: none; /* Masque le bouton lorsque la barre latérale est ouverte */
+  }
+  
+  /* Barre latérale */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #b33d5e;
+    color: var(--text-light);
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 10);
+    z-index: 1000;
+    overflow-y: auto;
+  }
+  
+  .sidebar h2 {
+    color: var(--yellow);
+    margin-bottom: 20px;
+  }
+  
+  .slider-container {
+    margin-bottom: 20px;
+  }
+  
+  .slider-container label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .slider-container input[type="range"] {
+    width: 100%;
+    accent-color: var(--pink);
+  }
+  
+  .slider-container input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid var(--yellow);
+    border-radius: 5px;
+    background-color: var(--background);
+    color: var(--text-dark);
+  }
+  
+  .sidebar-open .play-button{
+    margin-left: 300px;
+  }
+
+  
+  /* Boutons dans la barre latérale */
+  .modal-buttons {
+    margin-top: 20px;
+  }
+  
+  .modal-buttons button {
+    background-color: var(--blue);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal-buttons button:hover {
+    background-color: var(--pink);
+  }
+  
+  .modal-buttons button:last-child {
+    background-color: var(--orange);
+  }
+  
+  .modal-buttons button:last-child:hover {
+    background-color: var(--yellow);
+  }
+  
+  /* Contenu principal */
+  .main-content {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: calc(100vh - 100px);
+    margin-left: 0; 
+    transition: margin-left 0.3s ease; 
+  }
+  
+  /* Décalage lorsque la barre latérale est ouverte */
+  .sidebar-open .main-content {
+    margin-left: 300px; 
+  }
+  
+  /* Section d'entrée */
+  .input-section {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+  }
+  
+  .input-section .top-row {
+    display: flex;
+    flex-direction: row; 
+    gap: 10px;
+    width: 100%; 
+  }
+  
+  .input-section input[type="text"] {
+    width: 300px; /* Largeur de l'input */
+    padding: 10px;
+    border: 1px solid var(--text-dark);
+    border-radius: 5px;
+  }
+  
+  .input-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--blue);
+    color: var(--text-light);
+    transition: background-color 0.3s ease;
+  }
+  
+  .input-section button:hover {
+    background-color: var(--purple);
+  }
+  
+  .input-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+    flex-direction: row;
+  }
+
+  
+  /* Bouton Play */
+  .play-button button {
+    font-size: 20px;
+    background-color: rgb(77, 155, 40);
+    color: rgb(255, 252, 252);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 2px solid  rgb(235, 255, 235);
+  }
+  
+  .play-button button:hover {
+    background-color: var(--purple);
+  }
+  
+  /* Liste des items */
+  .items-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    position: absolute; 
+    top: 80px; 
+    right: 20px; 
+    text-align: left;
+    font-size: 25px;
+    max-width: 300px; 
+  }
+  
+  .items-list li {
+    background-color: var(--blue);
+    color: var(--text-light);
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .items-list li:hover {
+    background-color: var(--pink);
+  }
+  
+
+  .top-bar {
+    background-color: #b33d5e;
+    color: var(--text-light);
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start; /* Aligne le bouton à gauche */
+    align-items: center;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Bande en bas */
+  .bottom-bar {
+    background-color: #b33d5e;
+    color: var(--text-light);
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Centre le bouton */
+    align-items: center;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  button{
+    margin-left: 20px;
+  }
